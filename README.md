@@ -1,6 +1,4 @@
-# reactjs
-reactjs 
+reactjs
 
-repository for react.js exercises and test projects
+reactTime_START_STOP_RESTART
 
-tutorial branch 1.1

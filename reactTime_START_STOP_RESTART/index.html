@@ -1,4 +1,64 @@
+
+<!DOCTYPE html>
 <html>
-<head>
-</head>
+  <head>
+    <script src="http://fb.me/react-0.12.2.js"></script>
+	<script src="http://fb.me/JSXTransformer-0.12.2.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  </head>
+  <body>
+    <script type="text/jsx">
+
+		
+var TimeR = React.createClass({
+	getInitialState: function(){
+		return {
+			second: 0
+		};
+	},
+	setSecond: function(st){
+		if(st == 'start') {
+			this.setState({ second: this.state.second + 1 });
+		} else if(st == 'reset'){
+			this.setState({ second: 0 });
+		}
+	},
+	ts: null,
+	clickStart: function(){
+		this.clickStop();
+		var self = this;
+		this.ts = setInterval(function(){self.setSecond('start')}, 1000);
+		console.log('start');
+	},
+	clickStop: function(){
+		clearInterval(this.ts);
+		console.log('stop');
+	},
+	clickReset: function(){
+		clearInterval(this.ts);
+		this.setSecond('reset');
+		console.log('reset');
+		/*
+		var self = this;
+		this.ts = setInterval(function(){self.setSecond('start')}, 1000);
+		console.log('start');*/
+	},	
+    render: function()
+    {
+        return (
+            <div>
+                <a href="#" onClick={this.clickStart}>start interval</a><br/>  
+				<a href="#" onClick={this.clickStop}>stop interval</a><br/>   
+				<a href="#" onClick={this.clickReset}>reset interval</a><br/>
+				seconds: {this.state.second}
+            </div>
+        )
+    }
+});
+
+React.renderComponent(<TimeR/>, document.body);
+
+	</script>
+
+  </body>
 </html>
