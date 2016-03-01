@@ -6,9 +6,9 @@
 7777777777777
 77777777777777
 
-stash1
+stash
 
-stash2
+stash
 
-stash3
+stash
 
