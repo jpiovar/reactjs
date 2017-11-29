@@ -8,7 +8,13 @@ class Child2 extends Component {
         date: new Date(), 
         child2Data: 'ok'
     };
+
+    this.onClickBtn = this.onClickBtn.bind(this);
     
+  }
+
+  onClickBtn(){
+    this.props.triggerParentUpdateChild2("way2");
   }
 
   
@@ -20,6 +26,8 @@ class Child2 extends Component {
           child 2 
         </div>
         <button onClick={this.props.triggerParentUpdateChild2.bind(this,'oooo')}> update parent from child 2 </button>
+
+        <button onClick={this.onClickBtn}> update parent from child 2 way2</button>
       </div>
     );
   }

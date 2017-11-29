@@ -16,7 +16,7 @@ class Child1 extends Component {
   }
 
 
-  increaseCounter(a){
+  increaseCounter(a){ debugger;
     return a+1;
   }
 
@@ -42,7 +42,7 @@ Child1.defaultProps = {
 Child1.propTypes = {
   countProp: PropTypes.number.isRequired,
   triggerParentUpdate: PropTypes.func.isRequired,
-  name: PropTypes.number.isRequired
+  name: PropTypes.string.isRequired
 }
 
 export default Child1;
