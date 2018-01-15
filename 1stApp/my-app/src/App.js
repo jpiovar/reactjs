@@ -21,7 +21,7 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React {this.getName()}</h1>
+          <h1 className="App-title">{this.props.ups}   Welcome to React {this.getName()}</h1>
         </header>
         <div className="App-intro">
           To get started, <Child1 name='holly'/> edit <code>src/App.js</code> and save to reload.
