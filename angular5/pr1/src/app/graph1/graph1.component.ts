@@ -14,8 +14,17 @@ export class Graph1Component implements OnInit {
   ngOnInit() {
   }
 
-  ngAfterContentInit() { debugger;
+  ngAfterContentInit() { 
     d3.select("p#graph1p").style("color", "red");
+  }
+
+  clicked(event){
+    d3.select(event.target)
+    .append('circle')
+    .attr('cx',event.x)
+    .attr('cy',event.y)
+    .attr('r',10)
+    .attr('fill','red')
   }
 
 }
